@@ -1,4 +1,4 @@
-#index.py
+```index.py```
 # School-management-python
 Python_basic_school_managemnet system
 
@@ -58,7 +58,7 @@ Login_text.place(relx=0.7, rely=0.2)
 - **CTkLabel
 
 
-#home.py
+- **home.py
  # Student Management System
 
 This is a simple student management system with a graphical user interface (GUI) built using the `customtkinter` library. It allows users to search for students and add new students to the system.
