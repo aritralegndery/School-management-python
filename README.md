@@ -224,8 +224,20 @@ The `insert_data()` function takes various student details as arguments and inse
 #### 4. Searching for Data in the Database
 
 ```python
-def search_data(search_text):
-    conn = sqlite3.connect('student_data.
+    def search_data(search_text):
+        conn = sqlite3.connect('student_data.db')
+        cursor = conn.cursor()
+
+        # Search for data based on the search text
+        cursor.execute('''
+            SELECT * FROM students
+            WHERE name LIKE ? OR roll LIKE ? OR father LIKE ? OR mother LIKE ? OR phone LIKE ? OR birth_date LIKE ? OR birth_certificate LIKE ?
+        ''', ('%' + search_text + '%', '%' + search_text + '%', '%' + search_text + '%', '%' + search_text + '%', '%' + search_text + '%', '%' + search_text + '%', '%' + search_text + '%'))
+
+        rows = cursor.fetchall()
+        conn.close()
+
+        return rows
 
 ```
 
